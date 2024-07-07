@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMERJEET ANALYST PROTFOLIO</title>
-<body>
-    <h1></h1>
+    <title>SIMEJREET PORTFOLIO</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,6 +16,7 @@
             background-color: #f1f1f1;
             border: 1px solid #ccc;
             border-bottom: none;
+
         }
         .tab-content {
             display: none;
@@ -30,5 +29,49 @@
         }
     </style>
 </head>
+<body>
+
+<h1>Tabbed Interface Example</h1>
+
+<div>
+    <div class="tab" onclick="openTab(event, 'Tab1')">Tab 1</div>
+    <div class="tab" onclick="openTab(event, 'Tab3')">Tab 3</div>
+</div>
+
+<div id="Tab1" class="tab-content">
+    <h2>Tab 1 Content</h2>
+    <p>This is the content for Tab 1.</p>
+</div>
+
+<!--<div id="Tab2" class="tab-content">
+    <h2>Tab 2 Content</h2>
+    <p>This is the content for Tab 2.</p>
+</div>-->
+
+<div id="Tab3" class="tab-content">
+    <h2>Tab 3 Content</h2>
+    <p>This is the content for Tab 3.</p>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+    // Open the first tab by default
+    document.getElementsByClassName('tab')[0].click();
+</script>
+
 </body>
 </html>
